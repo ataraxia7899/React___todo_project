@@ -1,19 +1,21 @@
 // eslint-disable-next-line no-unused-vars
-import React from "react"
-// eslint-disable-next-line no-unused-vars
-import TodoItem from "./TodoItem"
+import react from 'react';
+import TodoItem from './TodoItem';
 
-
-// eslint-disable-next-line no-unused-vars
 function TodoBoard(props) {
-
-
-    return(
+    return (
         <div>
-            <h1>Todo List</h1>
-            {props.todoList.map((item)=><TodoItem item={item}/>)}
+            <h1 style={{color: "orange"}}>Todo List</h1>
+            {props.todoList.map((item, index) => (
+                <TodoItem 
+                    item={item} 
+                    key={index} 
+                    id={index} 
+                    deleteItem={props.deleteItem} 
+                />
+            ))}
         </div>
-    )
+    );
 }
 
-export default TodoBoard
+export default TodoBoard;
