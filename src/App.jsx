@@ -10,6 +10,7 @@ function App() {
     const addItem = () => {
         console.log('Complete', inputValue);
         setTodoList([...todoList, inputValue]);
+        setinputValue("");
     };
 
     const deleteItem = (id) => {
